@@ -1,23 +1,28 @@
-import { Stack, Box, Text, Button } from "@chakra-ui/react";
+import { Stack, Box, Text, Button, Image, Center } from "@chakra-ui/react";
 
-export default function BookDetailInfo() {
+export default function BookDetailInfo({ bookInfo }) {
   return (
     <Stack direction={["column", "row"]} spacing="24px">
-      {/* 책 정보 */}
-      <Box bg="yellow">
-        <Text>Escaping the Dar, Gray City</Text>
-        <Box bg="gray" w="80%" h="300px">
-          책표지
+      <Center display="inline" w="10rem">
+        <Text fontSize="xl" mb="1rem">
+          bookInfo.title
+        </Text>
+        <Box mt="0.3rem" mb="0.3rem">
+          <Image
+            src="http://books.google.com/books/content?id=nfCaDgAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+            alt="thumnail"
+          ></Image>
         </Box>
-        <Text>작가</Text>
-        <Text>출판사</Text>
-        <Text>출판일</Text>
-        <Text>페이지</Text>
-      </Box>
+        <Stack direction="col" display="inline">
+          <Text fontSize="sm">bookInfo.authors</Text>
+          <Text fontSize="sm">bookInfo.publisher</Text>
+          <Text fontSize="sm">bookInfo.publishedDate</Text>
+          <Text fontSize="sm">bookInfo.pages</Text>
+        </Stack>
+      </Center>
 
-      {/* 줄거리 */}
-      <Box bg="yellow" w="500px">
-        <Text>
+      <Box w="400px">
+        <Text m="1rem">
           줄거리줄거리줄거리줄거리줄거리줄거리줄거리줄거리
           줄거리줄거리줄거리줄거리줄거리줄거리줄거리줄거리
           줄거리줄거리줄거리줄거리줄거리줄거리줄거리줄거리
@@ -26,11 +31,11 @@ export default function BookDetailInfo() {
           줄거리줄거리줄거리줄거리줄거리줄거리줄거리줄거리
           줄거리줄거리줄거리줄거리줄거리줄거리줄거리줄거리
         </Text>
-        <Stack direction="row" spacing={4} align="center">
-          <Button colorScheme="teal" variant="solid">
+        <Stack direction="row" spacing={4} align="center" m="1rem">
+          <Button colorScheme="purple" variant="outline" size="xs">
             eBook
           </Button>
-          <Button colorScheme="teal" variant="solid">
+          <Button colorScheme="blue" variant="outline" size="xs">
             구매하기
           </Button>
         </Stack>

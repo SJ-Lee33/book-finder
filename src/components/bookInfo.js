@@ -7,7 +7,7 @@ export default function BookInfo({ bookInfo }) {
   };
 
   return (
-    <Center borderWidth="5px" borderRadius="lg" w="25rem">
+    <Center borderRadius="lg" w="25rem">
       <Box bg="red" h="100%" m="0.5rem" display="inline-block">
         <Image
           src="http://books.google.com/books/content?id=nfCaDgAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
@@ -29,7 +29,7 @@ export default function BookInfo({ bookInfo }) {
           <Text fontSize="sm">bookInfo.publisher</Text>
           <Text fontSize="sm">bookInfo.publishedDate</Text>
         </Stack>
-        <Stack direction="row" spacing="1rem">
+        <Stack direction="row" spacing="1rem" m="0.7rem">
           <Button colorScheme="pink" variant="outline" size="xs">
             더보기
           </Button>
