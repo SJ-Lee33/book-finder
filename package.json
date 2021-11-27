@@ -22,6 +22,11 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-decorators": "^7.16.4",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-styled-components": "^2.0.1",
     "prettier": "^2.4.1"
   }
 }
