@@ -5,8 +5,6 @@ export default function Result() {
   return (
     <Box bg="lightgray">
       <BookInfo />
-      <BookInfo />
-      <BookInfo />
     </Box>
   );
 }
