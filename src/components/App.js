@@ -70,8 +70,8 @@ export default function App() {
       let thumbnail = "";
       if (item.volumeInfo.imageLinks) {
         thumbnail = item.volumeInfo.imageLinks.thumbnail;
-
-        console.log("썸네일 : " + thumbnail);
+      } else {
+        thumbnail = "/images/noimage.jpg";
       }
       return (
         <div key={item.id}>
