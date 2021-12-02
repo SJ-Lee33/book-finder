@@ -1,4 +1,4 @@
-import { Image, Flex, Heading, Text, Wrap } from "@chakra-ui/react";
+import { Image, Link, Heading, Wrap } from "@chakra-ui/react";
 export default function Header() {
   return (
     <Wrap direction="column" align="center" w="100%">
@@ -9,10 +9,10 @@ export default function Header() {
         objectFit="cover"
       />
       <Heading
-        size="lg"
+        pt="1rem"
+        size="xl"
         fontWeight="bold"
         color="orange.700"
-        m="1rem"
         textShadow="1px 1px #718096"
       >
         찾고 싶은 책을 검색해 보세요!

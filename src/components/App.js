@@ -1,12 +1,4 @@
-import {
-  FormControl,
-  Flex,
-  Box,
-  Text,
-  Image,
-  Input,
-  Button,
-} from "@chakra-ui/react";
+import { FormControl, Input, Button } from "@chakra-ui/react";
 import { useState } from "react";
 import axios from "axios";
 import BookCard from "./BookCard";
@@ -48,11 +40,12 @@ export default function App() {
     };
 
     return (
-      <FormControl display="flex" w="30rem" alignItems="center" mt="1rem">
+      <FormControl display="flex" w="30rem" alignItems="center" m="2rem 0">
         <Input
           type="text"
           boxShadow="md"
           focusBorderColor="pink.200"
+          bg="white"
           value={query}
           onChange={search}
           onKeyDown={PressEnter}
