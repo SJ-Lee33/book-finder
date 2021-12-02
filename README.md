@@ -35,6 +35,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ---
 
+# 배포 링크
+https://book-finder-1886px.vercel.app
+
 # 12.02 변경사항
 1. header.js 추가
 2. BookCard.js 에서 ebook 버튼 추가하기 위해 'isEbook' 정보 추가로 받아옴
