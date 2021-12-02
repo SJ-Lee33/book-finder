@@ -42,3 +42,4 @@ https://book-finder-1886px.vercel.app
 1. header.js 추가
 2. BookCard.js 에서 ebook 버튼 추가하기 위해 'isEbook' 정보 추가로 받아옴
 3. UI 변경
+4. 썸네일 없는 책은 public/images/noimage.jpg 파일 뜨도록 함
