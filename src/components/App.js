@@ -75,6 +75,7 @@ export default function App() {
             authors={item.volumeInfo.authors}
             publisher={item.volumeInfo.publisher}
             publishedDate={item.volumeInfo.publishedDate}
+            isEbook={item.saleInfo.isEbook}
           />
         </div>
       );

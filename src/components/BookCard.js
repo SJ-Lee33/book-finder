@@ -16,6 +16,7 @@ const BookCard = ({
   authors,
   publisher,
   publishedDate,
+  isEbook,
 }) => {
   return (
     <Container
@@ -63,23 +64,26 @@ const BookCard = ({
             <Text fontSize="sm">{publisher}</Text>
             <Text fontSize="sm">{publishedDate}</Text>
           </Stack>
-          <Link
-            href={`http://play.google.com/store/books/details?id=${id}`}
-            isExternal
-          >
-            <Button
-              float="right"
-              mt="1rem"
-              color="white"
-              bg="blue.300"
-              boxShadow="md"
-              _hover={{
-                bg: "blue.500",
-              }}
+
+          {isEbook ? (
+            <Link
+              href={`http://play.google.com/store/books/details?id=${id}`}
+              isExternal
             >
-              eBook
-            </Button>
-          </Link>
+              <Button
+                float="right"
+                mt="1rem"
+                color="white"
+                bg="blue.300"
+                boxShadow="md"
+                _hover={{
+                  bg: "blue.500",
+                }}
+              >
+                eBook
+              </Button>
+            </Link>
+          ) : null}
         </Box>
       </Center>
     </Container>
