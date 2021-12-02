@@ -68,6 +68,7 @@ export default function App() {
       return (
         <div key={item.id}>
           <BookCard
+            id={item.id}
             thumbnail={thumbnail}
             title={item.volumeInfo.title}
             authors={item.volumeInfo.authors}

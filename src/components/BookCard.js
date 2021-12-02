@@ -6,9 +6,17 @@ import {
   Center,
   Stack,
   Button,
+  Link,
 } from "@chakra-ui/react";
 
-const BookCard = ({ thumbnail, title, authors, publisher, publishedDate }) => {
+const BookCard = ({
+  id,
+  thumbnail,
+  title,
+  authors,
+  publisher,
+  publishedDate,
+}) => {
   return (
     <Wrap>
       <Center borderRadius="lg" w="25rem" bg="lightgrey">
@@ -33,9 +41,14 @@ const BookCard = ({ thumbnail, title, authors, publisher, publishedDate }) => {
             <Button colorScheme="pink" variant="outline" size="xs">
               더보기
             </Button>
-            <Button colorScheme="teal" variant="outline" size="xs">
-              구매하기
-            </Button>
+            <Link
+              href={`http://play.google.com/store/books/details?id=${id}`}
+              isExternal
+            >
+              <Button colorScheme="teal" variant="outline" size="xs">
+                구매하기
+              </Button>
+            </Link>
           </Stack>
         </Box>
       </Center>
