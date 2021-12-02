@@ -10,6 +10,7 @@ export default function Header() {
       />
       <Heading
         size="lg"
+        fontWeight="bold"
         color="orange.700"
         m="1rem"
         textShadow="1px 1px #718096"

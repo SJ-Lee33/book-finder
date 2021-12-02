@@ -45,19 +45,20 @@ export default function App() {
     const search = (e) => {
       handleSubmit();
       setSearchQuery(e.target.value);
-      console.log("값:" + query);
     };
 
     return (
       <FormControl display="flex" w="30rem" alignItems="center" mt="1rem">
         <Input
           type="text"
+          boxShadow="md"
+          focusBorderColor="pink.200"
           value={query}
           onChange={search}
           onKeyDown={PressEnter}
-          placeholder="제목, 작가, 출판사를 입력해 보세요."
+          placeholder="🔍 제목, 작가, 출판사를 입력해 보세요."
         />
-        <Button ml="0.5rem" onClick={search}>
+        <Button ml="0.5rem" boxShadow="md" bg="pink.200" onClick={search}>
           Search
         </Button>
       </FormControl>
@@ -65,11 +66,12 @@ export default function App() {
   };
 
   const handleCards = () => {
-    console.log(cards);
     const items = cards.map((item, i) => {
       let thumbnail = "";
       if (item.volumeInfo.imageLinks) {
         thumbnail = item.volumeInfo.imageLinks.thumbnail;
+
+        console.log("썸네일 : " + thumbnail);
       }
       return (
         <div key={item.id}>

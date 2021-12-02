@@ -21,21 +21,31 @@ const BookCard = ({
       <Link
         href={`http://play.google.com/store/books/details?id=${id}`}
         isExternal
-        m="0.5rem"
+        mt="1rem"
         display="inline-block"
         textAlign="center"
         _hover={{
-          background: "white",
-          color: "red.500",
+          color: "red.600",
           boxShadow: "xl",
-          p: "0.5rem",
           rounded: "md",
-          bg: "white",
+          bg: "#FEFCBF",
         }}
       >
-        <Center borderRadius="lg" w="25rem" m="1rem" bg="lightgrey">
+        <Center
+          borderRadius="lg"
+          w="25rem"
+          m="1rem"
+          bg="gray.200"
+          boxShadow="md"
+        >
           <Box>
-            <Image h="100%" m="0.5rem" src={thumbnail} alt="thumnail"></Image>
+            <Image
+              h="100%"
+              m="0.5rem"
+              boxShadow="md"
+              src={thumbnail}
+              alt="thumnail"
+            ></Image>
           </Box>
           <Box display="inline-block" w="15rem" h="100%">
             <Stack
