@@ -32,3 +32,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+---
+
+# 배포 링크
+https://book-finder-1886px.vercel.app
+
+# 12.02 변경사항
+1. header.js 추가
+2. BookCard.js 에서 ebook 버튼 추가하기 위해 'isEbook' 정보 추가로 받아옴
+3. UI 변경
+4. 썸네일 없는 책은 public/images/noimage.jpg 파일 뜨도록 함

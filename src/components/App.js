@@ -46,7 +46,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <>
       <FormControl display="flex" w="30rem" alignItems="center" m="2rem 0">
         <Image src="/images/searching.png" mr="1rem" boxSize="2.3rem" />
         <Input
@@ -60,6 +60,7 @@ export default function App() {
           placeholder="제목, 작가, 출판사를 입력해 보세요."
         />
       </FormControl>
+
       {query &&
         cards !== null &&
         cards.map((item, i) => {
@@ -83,6 +84,6 @@ export default function App() {
             </div>
           );
         })}
-    </div>
+    </>
   );
 }
