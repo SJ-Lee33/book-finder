@@ -38,11 +38,11 @@ export default function App() {
   };
 
   if (loading) {
-    <Text fontSize="4xl">Loading...</Text>;
+    <Text fontSize="2xl">Loading...</Text>;
   }
 
   if (error || !cards) {
-    <Text fontSize="4xl">Error!</Text>;
+    <Text fontSize="2xl">Error!</Text>;
   }
 
   return (
