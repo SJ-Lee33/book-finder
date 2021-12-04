@@ -1,5 +1,5 @@
-import { FormControl, Input, Button } from "@chakra-ui/react";
-import { useState } from "react";
+import { FormControl, Input, Button, Image } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import BookCard from "./BookCard";
 
@@ -9,22 +9,20 @@ export default function App() {
   const [error, setError] = useState(null);
   const [cards, setCards] = useState([]);
 
-  const handleSubmit = () => {
+  useEffect(() => {
     setLoading(true);
     axios
       .get(`https://www.googleapis.com/books/v1/volumes?q=${query})`)
       .then((res) => {
         if (res.data.items.length > 0) {
-          console.log(res.data);
           setCards(res.data.items);
           setLoading(false);
-          console.log("cards:" + cards);
         }
       })
       .catch((error) => {
         setError(true);
       });
-  };
+  });
 
   const mainPage = () => {
     const PressEnter = (e) => {
@@ -35,12 +33,16 @@ export default function App() {
     };
 
     const search = (e) => {
-      handleSubmit();
       setSearchQuery(e.target.value);
     };
 
     return (
       <FormControl display="flex" w="30rem" alignItems="center" m="2rem 0">
+        <Image
+          src="https://cdn-icons.flaticon.com/png/512/2839/premium/2839041.png?token=exp=1638593307~hmac=57ba513e314fef7d87a5ae52de985a2a"
+          mr="1rem"
+          boxSize="2.3rem"
+        />
         <Input
           type="text"
           boxShadow="md"
@@ -49,11 +51,8 @@ export default function App() {
           value={query}
           onChange={search}
           onKeyDown={PressEnter}
-          placeholder="🔍 제목, 작가, 출판사를 입력해 보세요."
+          placeholder="제목, 작가, 출판사를 입력해 보세요."
         />
-        <Button ml="0.5rem" boxShadow="md" bg="pink.200" onClick={search}>
-          Search
-        </Button>
       </FormControl>
     );
   };
