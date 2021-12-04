@@ -1,4 +1,4 @@
-import { FormControl, Input, Button, Image } from "@chakra-ui/react";
+import { FormControl, Input, Text, Image } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import BookCard from "./BookCard";
@@ -22,7 +22,7 @@ export default function App() {
       .catch((error) => {
         setError(true);
       });
-  });
+  }, [query]);
 
   const mainPage = () => {
     const PressEnter = (e) => {
@@ -33,16 +33,12 @@ export default function App() {
     };
 
     const search = (e) => {
-      setSearchQuery(e.target.value);
+      setSearchQuery(() => e.target.value);
     };
 
     return (
       <FormControl display="flex" w="30rem" alignItems="center" m="2rem 0">
-        <Image
-          src="https://cdn-icons.flaticon.com/png/512/2839/premium/2839041.png?token=exp=1638593307~hmac=57ba513e314fef7d87a5ae52de985a2a"
-          mr="1rem"
-          boxSize="2.3rem"
-        />
+        <Image src="/images/searching.png" mr="1rem" boxSize="2.3rem" />
         <Input
           type="text"
           boxShadow="md"
