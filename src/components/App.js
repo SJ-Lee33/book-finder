@@ -15,7 +15,7 @@ export default function App() {
       setError(false);
       try {
         const res = await axios.get(
-          `https://www.googleapis.com/books/v1/volumes?q=${query})`
+          `https://www.googleapis.com/books/v1/volumes?&maxResults=40&q=${query})`
         );
         setCards(res.data.items);
         setLoading(false);
@@ -60,27 +60,29 @@ export default function App() {
           placeholder="제목, 작가, 출판사를 입력해 보세요."
         />
       </FormControl>
-      {cards?.map((item, i) => {
-        let thumbnail = "";
-        if (item.volumeInfo.imageLinks) {
-          thumbnail = item.volumeInfo.imageLinks.thumbnail;
-        } else {
-          thumbnail = "/images/noimage.jpg";
-        }
-        return (
-          <div key={item.id}>
-            <BookCard
-              id={item.id}
-              thumbnail={thumbnail}
-              title={item.volumeInfo.title}
-              authors={item.volumeInfo.authors}
-              publisher={item.volumeInfo.publisher}
-              publishedDate={item.volumeInfo.publishedDate}
-              isEbook={item.saleInfo.isEbook}
-            />
-          </div>
-        );
-      })}
+      {query &&
+        cards !== null &&
+        cards.map((item, i) => {
+          let thumbnail = "";
+          if (item.volumeInfo.imageLinks) {
+            thumbnail = item.volumeInfo.imageLinks.thumbnail;
+          } else {
+            thumbnail = "/images/noimage.jpg";
+          }
+          return (
+            <div key={item.id}>
+              <BookCard
+                id={item.id}
+                thumbnail={thumbnail}
+                title={item.volumeInfo.title}
+                authors={item.volumeInfo.authors}
+                publisher={item.volumeInfo.publisher}
+                publishedDate={item.volumeInfo.publishedDate}
+                isEbook={item.saleInfo.isEbook}
+              />
+            </div>
+          );
+        })}
     </div>
   );
 }
